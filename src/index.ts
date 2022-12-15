@@ -75,7 +75,11 @@ export const buildProject = async (project: Project) => {
   switch (type) {
     case 'StoryBook':
       await ncp(
-        path.join(__dirname, `../templates/${tempDir}/${framework}`),
+        path.join(__dirname, `../templates/${tempDir}/${framework}/base`),
+        name
+      )
+      await ncp(
+        path.join(__dirname, `../templates/${tempDir}/${framework}/${lang}`),
         name
       )
       break
