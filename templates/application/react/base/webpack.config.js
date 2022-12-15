@@ -9,11 +9,15 @@ module.exports = {
 
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
 
   devServer: {
     port: {{PORT}},
     historyApiFallback: true,
+    headers: {"Access-Control-Allow-Origin": "*"}
   },
 
   module: {
@@ -28,6 +32,10 @@ module.exports = {
       {
         test: /\.(css|s[ac]ss)$/i,
         use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -58,7 +66,8 @@ module.exports = {
       },
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./src/public/index.html",
+      favicon: './public/favicon.ico',
     }),
   ],
 };

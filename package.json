@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .js --fix",
     "prepare": "husky install"
   },
-  "author": "Di",
+  "author": "Dmitry Shibikin",
+  "license": "MIT",
   "dependencies": {
     "glob": "^7.2.0",
     "inquirer": "^8.2.0",

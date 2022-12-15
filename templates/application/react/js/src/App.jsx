@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { hot } from 'react-hot-loader/root';
 
 import "./index.{{CSS_EXTENSION}}";
 
@@ -11,4 +12,5 @@ const App = () => (
     <div>CSS: {{ CSS }}</div>
   </div>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+export default hot(App);

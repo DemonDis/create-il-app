@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Jack Herrington",
-    "email": "jherr@pobox.com"
+    "name": "Dmitry Shibikin",
+    "email": "dd@other-vision.com"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -31,7 +31,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
+    "@hot-loader/react-dom": "^17.0.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0"
   }
 }
