@@ -43,6 +43,10 @@ const buildProfiler = ({
     LANGUAGE: language === 'typescript' ? 'TypeScript' : 'JavaScript',
   }
 
+  if (type === 'StoryBook' || type === 'Application') {
+    profiler.PORT = port
+  }
+
   if (type === 'Application') {
     const isTailwind = css === 'Tailwind'
     profiler.CSS_EXTENSION = isTailwind ? 'scss' : 'css'
@@ -69,7 +73,12 @@ export const buildProject = async (project: Project) => {
   const profiler = buildProfiler(project)
 
   switch (type) {
-
+    case 'StoryBook':
+      await ncp(
+        path.join(__dirname, `../templates/${tempDir}/${framework}`),
+        name
+      )
+      break
     case 'Application':
       {
         await ncp(
