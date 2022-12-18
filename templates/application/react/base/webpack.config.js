@@ -60,7 +60,7 @@ module.exports = (env, arg) => ({
       filename: 'remoteEntry.js',
       remotes: {
         /* Example remotes
-          components: `components@{env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:{{PORT}}/' : '/{{SAFE_NAME}}'}remoteEntry.js`,
+          components: `components@{env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:3001' : '/components'}/remoteEntry.js`,
         */
       },
       exposes: {
