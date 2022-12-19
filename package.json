@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
