@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -10,6 +10,15 @@
     "lint": "eslint . --ext .js --fix",
     "prepare": "husky install"
   },
+  "keywords": [
+    "micro-frontend",
+    "webpack5",
+    "module-federation",
+    "wsrun",
+    "storybook",
+    "react",
+    "tailwind"
+  ],
   "author": "Dmitry Shibikin",
   "license": "MIT",
   "dependencies": {
