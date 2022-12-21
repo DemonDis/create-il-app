@@ -73,6 +73,12 @@ export const buildProject = async (project: Project) => {
   const profiler = buildProfiler(project)
 
   switch (type) {
+    case 'Packages':
+      await ncp(
+        path.join(__dirname, `../templates/${tempDir}`),
+        project.name
+      )
+      break
     case 'StoryBook':
       await ncp(
         path.join(__dirname, `../templates/${tempDir}/${framework}/base`),
