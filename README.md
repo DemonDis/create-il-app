@@ -9,7 +9,13 @@ npx create-il-app
 ```
 ## Micro-Frontends
 
-Module Federation Webpack 5
 1. React 18
-2. StoryBook (storybook-module-federation)
-3. Packages (wsrun)
+2. Module Federation (Webpack 5)
+3. StoryBook (storybook-module-federation)
+4. Packages (wsrun)
+
+### Devel
+
+1. Single-Spa
+2. Single-Spa + Module Federation (Webpack 5)
+3. Style (bootsrap + etc)
