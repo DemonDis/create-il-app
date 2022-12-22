@@ -19,3 +19,6 @@ npx create-il-app
 1. Single-Spa
 2. Single-Spa + Module Federation (Webpack 5)
 3. Style (bootsrap + etc)
+
+- Example VUE btn => REACT btn
+- Example REACT btn => VUE btn

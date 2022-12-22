@@ -52,10 +52,11 @@ module.exports = (env, arg) => ({
   },
 
   plugins: [
-    new VueLoaderPlugin({
+    new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false,
     }),
+    new VueLoaderPlugin(),
     new ModuleFederationPlugin({
       name: "{{SAFE_NAME}}",
       filename: "remoteEntry.js",
@@ -66,7 +67,7 @@ module.exports = (env, arg) => ({
       },
       exposes: {
         /* Example exposes
-          './Button': './src/components/Button.vue',
+          './Button': './src/components/Button/index.vue',
         */
       },
       shared: require("./package.json").dependencies,
