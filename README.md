@@ -14,7 +14,7 @@ npx create-il-app
 3. StoryBook (storybook-module-federation)
 4. Packages (wsrun)
 
-### Devel
+### Under development
 
 1. Single-Spa
 2. Single-Spa + Module Federation (Webpack 5)
