@@ -70,7 +70,7 @@ import { Project } from '../src/types'
         type: 'input',
         message: 'Port number:',
         name: 'port',
-        default: '8080',
+        default: '9001',
       },
       {
         type: 'list',
