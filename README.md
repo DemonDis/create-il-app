@@ -9,7 +9,7 @@ npx create-il-app
 ```
 ## Micro-Frontends
 
-1. React 18
+1. React 18 / Vue3
 2. Module Federation (Webpack 5)
 3. StoryBook (storybook-module-federation)
 4. Packages (wsrun)
@@ -21,5 +21,11 @@ npx create-il-app
 3. Style (bootsrap + etc)
 
 ### Сomponent example
+
 - Example VUE btn => REACT
 - Example REACT btn => VUE
+
+### 🐛
+
+1. storybook folder => .storybook (rename)
+2. typescript version

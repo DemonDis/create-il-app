@@ -43,7 +43,7 @@ const buildProfiler = ({
     LANGUAGE: language === 'typescript' ? 'TypeScript' : 'JavaScript',
   }
 
-  if (type === 'StoryBook' || type === 'Application') {
+  if (type === 'StoryBook' || type === 'SingleSpa' || type === 'Application' ) {
     profiler.PORT = port
   }
 
@@ -80,6 +80,16 @@ export const buildProject = async (project: Project) => {
       )
       break
     case 'StoryBook':
+      await ncp(
+        path.join(__dirname, `../templates/${tempDir}/${framework}/base`),
+        name
+      )
+      await ncp(
+        path.join(__dirname, `../templates/${tempDir}/${framework}/${lang}`),
+        name
+      )
+      break
+    case 'SingleSpa':
       await ncp(
         path.join(__dirname, `../templates/${tempDir}/${framework}/base`),
         name

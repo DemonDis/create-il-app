@@ -15,5 +15,5 @@ export type Project = {
   css?: 'CSS' | 'Tailwind'
   port?: number
   name: string
-  type: 'Application' | 'StoryBook' | 'Packages'
+  type: 'Application' | 'StoryBook' | 'Packages' | 'SingleSpa'
 }

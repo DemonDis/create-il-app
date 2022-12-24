@@ -17,7 +17,7 @@ import { Project } from '../src/types'
       type: 'list',
       message: 'Project Type:',
       name: 'type',
-      choices: ['Application', 'StoryBook', 'Packages'],
+      choices: ['Application', 'StoryBook', 'Packages', 'SingleSpa'],
       default: 'Application',
     },
   ])
@@ -57,6 +57,47 @@ import { Project } from '../src/types'
     buildProject({
       ...answers,
       ...serverAnswers,
+    })
+  }
+
+  if (answers.type === 'SingleSpa') {
+    const templates = fs
+      .readdirSync(path.join(__dirname, '../templates/singlespa'))
+      .sort()
+
+    const appAnswers = await inquirer.prompt<Project>([
+      {
+        type: 'input',
+        message: 'Port number:',
+        name: 'port',
+        default: '9001',
+      },
+      {
+        type: 'list',
+        message: 'Framework:',
+        name: 'framework',
+        choices: templates,
+        default: 'react',
+      },
+      {
+        type: 'list',
+        message: 'Language:',
+        name: 'language',
+        choices: ['typescript', 'javascript'],
+        default: 'javascript',
+      },
+      {
+        type: 'list',
+        message: 'CSS:',
+        name: 'css',
+        choices: ['CSS', 'Tailwind'],
+        default: 'CSS',
+      },
+    ])
+
+    buildProject({
+      ...answers,
+      ...appAnswers,
     })
   }
 
@@ -101,12 +142,12 @@ import { Project } from '../src/types'
     })
   }
 
-  shell.echo(`Your '${answers.name}' project is ready to go.
+  shell.echo(`Your '${answers.name}' project. 🔥 READY 🔥.
 
 Next steps:
 
 ▶️ cd ${answers.name}
-▶️ npm install
-▶️ npm start
+▶️ yarn install
+▶️ yarn start
 `)
 })()
