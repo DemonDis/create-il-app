@@ -75,6 +75,10 @@ export const buildProject = async (project: Project) => {
   switch (type) {
     case 'Packages':
       await ncp(
+        path.join(__dirname, `../templates/${tempDir}/packages`),
+        project.name
+      )
+      await ncp(
         path.join(__dirname, `../templates/${tempDir}`),
         project.name
       )
