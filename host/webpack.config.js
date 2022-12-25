@@ -15,7 +15,7 @@ module.exports = (env, arg) => ({
   },
 
   output: {
-    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:{{PORT}}/' : '/{{SAFE_NAME}}/',
+    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:9001/' : '/host/',
   },
 
   resolve: {
@@ -26,7 +26,7 @@ module.exports = (env, arg) => ({
   },
 
   devServer: {
-    port: {{PORT}},
+    port: 9001,
     historyApiFallback: true,
     headers: {'Access-Control-Allow-Origin': '*'}
   },
@@ -60,7 +60,7 @@ module.exports = (env, arg) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: '{{SAFE_NAME}}',
+      name: 'host',
       filename: 'remoteEntry.js',
       remotes: {
         /* Example remotes
