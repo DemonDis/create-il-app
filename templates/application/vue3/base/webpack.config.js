@@ -3,8 +3,6 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const { VueLoaderPlugin } = require("vue-loader");
 
 const webpack = require('webpack');
-const path = require('path');
-const deps = require('./package.json').dependencies;
 
 module.exports = (env, arg) => ({
   module: arg.mode === 'production' ? 'production' : 'development',
