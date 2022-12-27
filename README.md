@@ -21,6 +21,10 @@ npx create-il-app
 2. Single-Spa + Module Federation (Webpack 5)
 3. Style (bootsrap + etc)
 
+### Tesr
+
+- Single-Spa + Module Federation
+
 ### Сomponent example
 
 - Example VUE btn => REACT
