@@ -1,8 +1,8 @@
 import { registerApplication, start } from 'single-spa';
 
 registerApplication(
-  'app',
-  () => import('nav/App'),
+  'remote',
+  () => import('remote/remote'),
   location => location.pathname.startsWith('/')
 );
 

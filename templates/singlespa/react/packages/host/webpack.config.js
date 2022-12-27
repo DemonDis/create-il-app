@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-// const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index',
@@ -38,19 +37,14 @@ module.exports = {
   },
 
   plugins: [
-    // new CopyPlugin({patterns: [
-    //   { from: 'fruit', to: 'fruit' },
-    // ]}),
     new ModuleFederationPlugin({
-      name: 'home',
-      library: { type: 'var', name: 'home' },
+      name: 'host',
+      library: { type: 'var', name: 'host' },
       filename: 'remoteEntry.js',
       remotes: {
-        nav: 'nav'
+        remote: 'remote'
       },
-      exposes: {
-        // './fruit': './src/fruit'
-      },
+      exposes: { },
       shared: []
     }),
     new HtmlWebpackPlugin({

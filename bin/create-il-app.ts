@@ -67,24 +67,11 @@ import { Project } from '../src/types'
 
     const appAnswers = await inquirer.prompt<Project>([
       {
-        type: 'input',
-        message: 'Port number:',
-        name: 'port',
-        default: '9001',
-      },
-      {
         type: 'list',
         message: 'Framework:',
         name: 'framework',
         choices: templates,
         default: 'react',
-      },
-      {
-        type: 'list',
-        message: 'Language:',
-        name: 'language',
-        choices: ['typescript', 'javascript'],
-        default: 'javascript',
       },
       {
         type: 'list',

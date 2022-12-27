@@ -34,12 +34,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'nav',
-      library: { type: 'var', name: 'nav' },
+      name: 'remote',
+      library: { type: 'var', name: 'remote' },
       filename: 'remoteEntry.js',
       remotes: {},
       exposes: {
-        './App': './src/index.jsx'
+        './remote': './src/index.jsx'
       },
       shared: ['react', 'react-dom', 'single-spa-react']
     }),
