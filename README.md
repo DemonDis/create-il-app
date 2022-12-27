@@ -21,9 +21,9 @@ npx create-il-app
 2. Single-Spa + Module Federation (Webpack 5)
 3. Style (bootsrap + etc)
 
-### Tesr
+### Test
 
-- Single-Spa + Module Federation
+- Single-Spa + Module Federation (home - nav)
 
 ### Сomponent example
 
