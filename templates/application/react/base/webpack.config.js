@@ -69,11 +69,11 @@ module.exports = (env, arg) => ({
       shared: {
         ...deps,
         react: {
-          singleton: true,
+          // singleton: true,
           requiredVersion: deps.react,
         },
         'react-dom': {
-          singleton: true,
+          // singleton: true,
           requiredVersion: deps['react-dom'],
         },
       },

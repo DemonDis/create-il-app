@@ -110,7 +110,7 @@ export const buildProject = async (project: Project) => {
           const packageJSON = JSON.parse(
               fs.readFileSync(path.join(name, 'package.json'), 'utf8')
           )
-          packageJSON.devDependencies.tailwindcss = '^2.0.2'
+          packageJSON.devDependencies.tailwindcss = '^3.2.4'
           fs.writeFileSync(
               path.join(name, 'package.json'),
               JSON.stringify(packageJSON, null, 2)

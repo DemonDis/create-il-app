@@ -23,7 +23,7 @@ npx create-il-app
 
 ### Test
 
-- Single-Spa + Module Federation (home - nav)
+- Single-Spa + Module Federation (host/remote)
 
 ### Сomponent example
 

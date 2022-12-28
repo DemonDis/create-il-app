@@ -28,10 +28,6 @@ module.exports = {
         options: {
           presets: [require.resolve('@babel/preset-react')]
         }
-      },
-      {
-        test: /\.md$/,
-        loader: 'raw-loader'
       }
     ]
   },
@@ -48,7 +44,8 @@ module.exports = {
       shared: []
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index.html',
+      favicon: './public/favicon.ico',
     }),
   ]
 };
