@@ -1,7 +1,7 @@
 import React from "react";
 import { hot } from 'react-hot-loader/root';
 
-import "./index.{{CSS_EXTENSION}}";
+import "./styles/index.{{CSS_EXTENSION}}";
 
 const App = () => (
   <div className="{{CONTAINER}}">

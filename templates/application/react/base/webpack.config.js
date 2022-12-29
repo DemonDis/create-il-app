@@ -36,7 +36,7 @@ module.exports = (env, arg) => ({
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader', "sass-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,

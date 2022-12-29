@@ -101,7 +101,7 @@ export const buildProject = async (project: Project) => {
         )
 
         if (profiler.CSS_EXTENSION === 'scss') {
-          fs.unlinkSync(path.normalize(`${name}/src/index.css`))
+          fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
           await ncp(
               path.join(__dirname, '../templates/application-extras/tailwind'),
               name
@@ -130,7 +130,7 @@ export const buildProject = async (project: Project) => {
         )
 
         if (profiler.CSS_EXTENSION === 'scss') {
-          fs.unlinkSync(path.normalize(`${name}/src/index.css`))
+          fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
           await ncp(
               path.join(__dirname, '../templates/application-extras/tailwind'),
               name

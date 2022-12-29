@@ -15,20 +15,22 @@ npx create-il-app
 3. StoryBook (storybook-module-federation)
 4. Packages (wsrun)
 
+### Styles
+
+1. SCSS architecture
+2. Tailwind
+
 ### Under development
 
 1. Single-Spa
 2. Single-Spa + Module Federation (Webpack 5)
-3. Style (bootsrap + etc)
-
-### Test
-
-- Single-Spa + Module Federation (host/remote)
+3. Ui component (bootsrap + etc)
 
 ### Сomponent example
 
 - Example VUE btn => REACT
 - Example REACT btn => VUE
+- Single-Spa + Module Federation (host/remote)
 
 ### 🐛
 

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./index.{{CSS_EXTENSION}}";
+import "./styles/index.{{CSS_EXTENSION}}";
 
 const App = () => (
   <div className="{{CONTAINER}}">
@@ -11,4 +11,5 @@ const App = () => (
     <div>CSS: {{ CSS }}</div>
   </div>
 );
+
 ReactDOM.render(<App />, document.getElementById("app"));

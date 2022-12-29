@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 
-import "./index.{{CSS_EXTENSION}}";
+import "./styles/index.{{CSS_EXTENSION}}";
 
 import App from "./App.vue";
 
