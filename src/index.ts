@@ -27,6 +27,14 @@ const renameGitignore = (projectName: string) => {
     )
   }
 }
+const renameStoryBook = (projectName: string) => {
+  if (fs.existsSync(path.normalize(`${projectName}/storybook`))) {
+    fs.renameSync(
+      path.normalize(`${projectName}/storybook`),
+      path.normalize(`${projectName}/.storybook`)
+    )
+  }
+}
 
 const buildProfiler = ({
   type,
@@ -155,4 +163,5 @@ export const buildProject = async (project: Project) => {
       templateFile(file, profiler)
     }
   })
+  renameStoryBook(name)
 }

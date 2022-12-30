@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -14,10 +14,13 @@
     "micro-frontend",
     "webpack5",
     "module-federation",
+    "single-spa",
     "wsrun",
     "storybook",
     "react",
-    "tailwind"
+    "vue3",
+    "tailwind",
+    "scss"
   ],
   "author": "Dmitry Shibikin",
   "license": "MIT",
