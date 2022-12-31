@@ -18,7 +18,6 @@ const templateFile = (fileName: string, replacements: Profiler) => {
   fs.writeFileSync(fileName, template)
 }
 
-// required for npm publish
 const renameGitignore = (projectName: string) => {
   if (fs.existsSync(path.normalize(`${projectName}/gitignore`))) {
     fs.renameSync(
@@ -38,6 +37,7 @@ const renameStoryBook = (projectName: string) => {
 
 const buildProfiler = ({
   type,
+  typeweb,
   framework,
   language,
   name,
@@ -46,6 +46,7 @@ const buildProfiler = ({
 }: Project) => {
   const profiler: Profiler = {
     NAME: name,
+    TYPEWEB: typeweb === 'SPA' ? 'SPA' : 'SSR',
     FRAMEWORK: framework,
     SAFE_NAME: name.replace(/-/g, '_').trim(),
     LANGUAGE: language === 'typescript' ? 'TypeScript' : 'JavaScript',
@@ -75,17 +76,13 @@ const buildProfiler = ({
 //   - port: Port to run the project on
 
 export const buildProject = async (project: Project) => {
-  const { language, name, framework, type } = project
+  const { language, name, framework, typeweb, type } = project
   const lang = language === 'typescript' ? 'ts' : 'js'
   const tempDir = type.toLowerCase()
   const profiler = buildProfiler(project)
 
   switch (type) {
     case 'Packages':
-      // await ncp(
-      //   path.join(__dirname, `../templates/${tempDir}/packages`),
-      //   project.name
-      // )
       await ncp(
         path.join(__dirname, `../templates/${tempDir}`),
         project.name
@@ -129,11 +126,11 @@ export const buildProject = async (project: Project) => {
     case 'Application':
       {
         await ncp(
-          path.join(__dirname, `../templates/${tempDir}/${framework}/base`),
+          path.join(__dirname, `../templates/${tempDir}/${typeweb}/${framework}/base`),
           name
         )
         await ncp(
-          path.join(__dirname, `../templates/${tempDir}/${framework}/${lang}`),
+          path.join(__dirname, `../templates/${tempDir}/${typeweb}/${framework}/${lang}`),
           name
         )
 

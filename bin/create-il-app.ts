@@ -9,7 +9,7 @@ import { Project } from '../src/types'
   const answers = await inquirer.prompt<Project>([
     {
       type: 'input',
-      message: 'Pick the name of your app:',
+      message: 'Name of your app:',
       name: 'name',
       default: 'host',
     },
@@ -90,7 +90,7 @@ import { Project } from '../src/types'
 
   if (answers.type === 'Application') {
     const templates = fs
-      .readdirSync(path.join(__dirname, '../templates/application'))
+      .readdirSync(path.join(__dirname, `../templates/application`))
       .sort()
 
     const appAnswers = await inquirer.prompt<Project>([
@@ -102,9 +102,24 @@ import { Project } from '../src/types'
       },
       {
         type: 'list',
+        message: 'Type:',
+        name: 'typeweb',
+        choices: templates,
+        default: 'SPA',
+      },
+ 
+    ])
+
+    const templates2 = fs
+      .readdirSync(path.join(__dirname, `../templates/application/${appAnswers.typeweb}`))
+      .sort()
+
+    const appAnswers2 = await inquirer.prompt<Project>([
+      {
+        type: 'list',
         message: 'Framework:',
         name: 'framework',
-        choices: templates,
+        choices: templates2,
         default: 'react',
       },
       {
@@ -121,11 +136,12 @@ import { Project } from '../src/types'
         choices: ['CSS', 'Tailwind'],
         default: 'CSS',
       },
-    ])
 
+    ])
     buildProject({
       ...answers,
       ...appAnswers,
+      ...appAnswers2,
     })
   }
 
@@ -134,7 +150,7 @@ import { Project } from '../src/types'
 Next steps:
 
 ▶️ cd ${answers.name}
-▶️ yarn install
+▶️ yarn
 ▶️ yarn start
 `)
 })()

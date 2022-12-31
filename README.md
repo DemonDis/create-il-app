@@ -3,17 +3,26 @@
 [![npm version](https://badge.fury.io/js/create-il-app.svg)](https://badge.fury.io/js/create-il-app) [![npm version](https://img.shields.io/npm/dm/create-il-app.svg)](https://badge.fury.io/js/create-il-app)
 [![size][size]][size-url]
 
+<div align="center"><img src="./images/InnoLab.png" height="150"/></div>
+
 ## Usage
 
 ```
 npx create-il-app
 ```
+
 ## Micro-Frontends
 
-1. React 18 / Vue3
-2. Module Federation (Webpack 5)
-3. StoryBook (storybook-module-federation)
-4. Packages (wsrun)
+1. Module Federation Webpack 5 (MFW)
+    1. SPA
+        1. React 18 (js)
+        2. VUE 3 (js)
+    2. SRR
+3. Single-Spa + MFW
+    1. React 18 (js)
+4. StoryBook (storybook-module-federation)
+    1. React 18 (js)
+5. Packages (wsrun)
 
 ### Styles
 
@@ -29,6 +38,7 @@ npx create-il-app
 5. Single-Spa typescript + framework (vue3... etc)
 6. SSR example
 7. Test
+8. Angular
 
 ### Сomponent example
 
