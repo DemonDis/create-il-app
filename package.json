@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -19,8 +19,11 @@
     "storybook",
     "react",
     "vue3",
+    "next",
     "tailwind",
-    "scss"
+    "scss",
+    "SPA",
+    "SSR"
   ],
   "author": "Dmitry Shibikin",
   "license": "MIT",
