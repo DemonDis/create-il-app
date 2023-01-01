@@ -3,8 +3,6 @@
 [![npm version](https://badge.fury.io/js/create-il-app.svg)](https://badge.fury.io/js/create-il-app) [![npm version](https://img.shields.io/npm/dm/create-il-app.svg)](https://badge.fury.io/js/create-il-app)
 [![size][size]][size-url]
 
-<div align="center"><img src="./images/InnoLab.png" height="150"/></div>
-
 ## Usage
 
 ```
@@ -18,6 +16,7 @@ npx create-il-app
         1. React 18 (js)
         2. VUE 3 (js)
     2. SRR
+        1. Next 13 (js)
 3. Single-Spa + MFW
     1. React 18 (js)
 4. StoryBook (storybook-module-federation)
