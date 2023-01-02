@@ -10,7 +10,17 @@ npx create-il-app
 ```
 
 ## Micro-Frontends
-
+```js
+({
+  type: 'Application',
+  typeweb: 'SPA',
+  name: 'host',
+  port: '9001',
+  framework: 'react',
+  language: 'javascript',
+  css: 'css',
+})
+```
 1. Module Federation Webpack 5 (MFW)
     1. SPA
         1. React 18 (js)

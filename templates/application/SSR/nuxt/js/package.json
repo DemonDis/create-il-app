@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt dev -p {{PORT}}",
+    "dev": "nuxt dev -p {{PORT}} --open",
     "build": "nuxt build"
   },
   "devDependencies": {
