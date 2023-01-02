@@ -31,13 +31,12 @@ npx create-il-app
 ### Under development
 
 1. Single-Spa
-2. Single-Spa + Module Federation (Webpack 5)
-3. Ui component (bootsrap... etc)
-4. Storybook storybook-webpack-federation-plugin"
-5. Single-Spa typescript + framework (vue3... etc)
-6. SSR example
-7. Test
-8. Angular
+2. Ui component (bootsrap... etc)
+3. Storybook storybook-webpack-federation-plugin"
+4. Single-Spa typescript + framework (vue3... etc)
+5. SSR example
+6. Test
+7. Angular
 
 ### Сomponent example
 
