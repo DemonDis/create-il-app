@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "nuxt dev -p {{PORT}}",
+    "build": "nuxt build"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.1.9",
+    "nuxt": "^3.0.0-rc.8"
   },
   "dependencies": {
-    "core-js": "^3.25.3",
-    "nuxt": "^2.15.8",
-    "vue": "^2.7.10",
-    "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
-  },
-  "devDependencies": {}
+    "@nuxt/vite-builder": "^3.0.0-rc.8"
+  }
 }
