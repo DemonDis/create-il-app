@@ -110,23 +110,28 @@ import { Project } from '../src/types'
  
     ])
 
-    const templates2 = fs
+    const typeweb = fs
       .readdirSync(path.join(__dirname, `../templates/application/${appAnswers.typeweb}`))
       .sort()
 
-    const appAnswers2 = await inquirer.prompt<Project>([
+    const appAnswersType = await inquirer.prompt<Project>([
       {
         type: 'list',
         message: 'Framework:',
         name: 'framework',
-        choices: templates2,
+        choices: typeweb,
         default: 'react',
       },
+
+    ])
+
+    const lang = appAnswersType.framework === 'angular' ? ['typescript'] : ['typescript', 'javascript'];
+    const appAnswersList = await inquirer.prompt<Project>([
       {
         type: 'list',
         message: 'Language:',
         name: 'language',
-        choices: ['typescript', 'javascript'],
+        choices: lang,
         default: 'javascript',
       },
       {
@@ -138,10 +143,12 @@ import { Project } from '../src/types'
       },
 
     ])
+
     buildProject({
       ...answers,
       ...appAnswers,
-      ...appAnswers2,
+      ...appAnswersType,
+      ...appAnswersList
     })
   }
 

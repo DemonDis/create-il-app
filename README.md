@@ -29,7 +29,7 @@ npx create-il-app
         1. Next 13 (js)
 2. Vite
     1. SRR
-        1. Nuxt 13 (js)
+        1. Nuxt 3 (js)
 3. Single-Spa + MFW
     1. React 18 (js)
 4. StoryBook (storybook-module-federation)
