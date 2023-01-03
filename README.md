@@ -25,6 +25,7 @@ npx create-il-app
     1. SPA
         1. React 18 (js)
         2. VUE 3 (js)
+        3. Angular (ts)
     2. SRR
         1. Next 13 (js)
 2. Vite
@@ -50,6 +51,7 @@ npx create-il-app
 5. SSR example
 6. Test
 7. Angular
+8. Vite tools build
 
 ### Сomponent example
 
