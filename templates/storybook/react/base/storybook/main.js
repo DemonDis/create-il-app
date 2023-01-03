@@ -5,7 +5,7 @@ module.exports = withStorybookModuleFederation({
   filename: 'remoteEntry.js',
   remotes: {
     /* Example remotes
-      components: `components@{process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : '/components'}/remoteEntry.js`,
+      components: `components@${process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : '/components'}/remoteEntry.js`,
     */
   },
   shared: {

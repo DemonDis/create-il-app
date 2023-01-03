@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -22,6 +22,7 @@
     "next",
     "nuxt",
     "tailwind",
+    "bootstrap",
     "scss",
     "SPA",
     "SSR"

@@ -77,7 +77,7 @@ import { Project } from '../src/types'
         type: 'list',
         message: 'CSS:',
         name: 'css',
-        choices: ['CSS', 'Tailwind'],
+        choices: ['CSS', 'Tailwind', 'Bootsrap'],
         default: 'CSS',
       },
     ])
@@ -138,7 +138,7 @@ import { Project } from '../src/types'
         type: 'list',
         message: 'CSS:',
         name: 'css',
-        choices: ['CSS', 'Tailwind'],
+        choices: ['CSS', 'Tailwind', 'Bootsrap'],
         default: 'CSS',
       },
 
