@@ -42,12 +42,14 @@ const buildProfiler = ({
   language,
   name,
   css,
+  css2,
   port,
 }: Project) => {
   const profiler: Profiler = {
     NAME: name,
     TYPEWEB: typeweb === 'SPA' ? 'SPA' : 'SSR',
     FRAMEWORK: framework,
+    CSS2: css2,
     SAFE_NAME: name.replace(/-/g, '_').trim(),
     LANGUAGE: language === 'typescript' ? 'TypeScript' : 'JavaScript',
   }
@@ -76,7 +78,7 @@ const buildProfiler = ({
 //   - port: Port to run the project on
 
 export const buildProject = async (project: Project) => {
-  const { language, name, framework, typeweb, type } = project
+  const { language, name, framework, typeweb, type, } = project
   const lang = language === 'typescript' ? 'ts' : 'js'
   const tempDir = type.toLowerCase()
   const profiler = buildProfiler(project)
@@ -134,7 +136,7 @@ export const buildProject = async (project: Project) => {
           name
         )
 
-        if (profiler.CSS_EXTENSION === 'scss') {
+        if (profiler.CSS2 === 'Tailwind') {
           fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
           await ncp(
               path.join(__dirname, '../templates/application-extras/tailwind'),
@@ -150,6 +152,43 @@ export const buildProject = async (project: Project) => {
               JSON.stringify(packageJSON, null, 2)
           )
         }
+
+
+        if (profiler.CSS2 === 'Bootsrap') {
+          fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
+          await ncp(
+              path.join(__dirname, '../templates/application-extras/bootstrap'),
+              name
+          )
+
+          const packageJSON = JSON.parse(
+              fs.readFileSync(path.join(name, 'package.json'), 'utf8')
+          )
+          packageJSON.devDependencies.bootstrap = '^5.2.3'
+          fs.writeFileSync(
+              path.join(name, 'package.json'),
+              JSON.stringify(packageJSON, null, 2)
+          )
+        }
+
+
+        if (profiler.CSS2 === 'CSS') {
+          fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
+          await ncp(
+              path.join(__dirname, '../templates/application-extras/tailwind'),
+              name
+          )
+
+          const packageJSON = JSON.parse(
+              fs.readFileSync(path.join(name, 'package.json'), 'utf8')
+          )
+          packageJSON.devDependencies.tailwindcss = '^2.0.2'
+          fs.writeFileSync(
+              path.join(name, 'package.json'),
+              JSON.stringify(packageJSON, null, 2)
+          )
+        }
+
       }
       break
   }

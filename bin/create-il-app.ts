@@ -136,11 +136,18 @@ import { Project } from '../src/types'
       },
       {
         type: 'list',
-        message: 'CSS:',
-        name: 'css',
+        message: 'CSS2:',
+        name: 'css2',
         choices: ['CSS', 'Tailwind', 'Bootsrap'],
         default: 'CSS',
       },
+      // {
+      //   type: 'list',
+      //   message: 'CSS:',
+      //   name: 'css',
+      //   choices: ['CSS', 'Tailwind', 'Bootsrap'],
+      //   default: 'CSS',
+      // },
 
     ])
 

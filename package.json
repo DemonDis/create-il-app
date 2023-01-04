@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -12,20 +12,13 @@
   },
   "keywords": [
     "micro-frontend",
-    "webpack5",
-    "module-federation",
+    "webpack5", "module-federation",
     "single-spa",
     "wsrun",
     "storybook",
-    "react",
-    "vue3",
-    "next",
-    "nuxt",
-    "tailwind",
-    "bootstrap",
-    "scss",
-    "SPA",
-    "SSR"
+    "react", "vue3", "next", "nuxt",
+    "tailwind", "bootstrap", "scss",
+    "SPA", "SSR"
   ],
   "author": "Dmitry Shibikin",
   "license": "MIT",

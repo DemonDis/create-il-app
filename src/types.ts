@@ -1,6 +1,7 @@
 export type Profiler = {
   NAME: string
   FRAMEWORK: string | undefined
+  CSS2?: 'CSS' | 'Tailwind' | 'Bootsrap'
   TYPEWEB: 'SPA' | 'SSR'
   SAFE_NAME: string
   LANGUAGE: 'TypeScript' | 'JavaScript'
@@ -12,6 +13,7 @@ export type Profiler = {
 
 export type Project = {
   framework?: string
+  css2?: 'CSS' | 'Tailwind' | 'Bootsrap'
   typeweb?:  'SPA' | 'SSR'
   language?: 'javascript' | 'typescript'
   css?: 'CSS' | 'Tailwind' | 'Bootsrap'
