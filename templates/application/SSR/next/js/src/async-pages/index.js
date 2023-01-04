@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div class="{{CONTAINER}}">
       <div>Name: {{ NAME }}</div>
+      <div>Type: {{ TYPEWEB }}</div>
       <div>Framework: {{ FRAMEWORK }}</div>
       <div>Language: {{ LANGUAGE }}</div>
       <div>CSS: {{ CSS }}</div>

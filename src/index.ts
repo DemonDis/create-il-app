@@ -42,14 +42,13 @@ const buildProfiler = ({
   language,
   name,
   css,
-  css2,
   port,
 }: Project) => {
   const profiler: Profiler = {
     NAME: name,
     TYPEWEB: typeweb === 'SPA' ? 'SPA' : 'SSR',
     FRAMEWORK: framework,
-    CSS2: css2,
+    CSS: css,
     SAFE_NAME: name.replace(/-/g, '_').trim(),
     LANGUAGE: language === 'typescript' ? 'TypeScript' : 'JavaScript',
   }
@@ -57,25 +56,8 @@ const buildProfiler = ({
   if (type === 'StoryBook' || type === 'Application' ) {
     profiler.PORT = port
   }
-
-  if (type === 'Application' || type === 'SingleSpa') {
-    const isTailwind = css === 'Tailwind'
-    profiler.CSS_EXTENSION = isTailwind ? 'scss' : 'css'
-    profiler.CONTAINER = isTailwind
-      ? 'mt-10 text-3xl mx-auto max-w-6xl'
-      : 'container'
-    profiler.CSS = isTailwind ? 'Tailwind' : 'Empty CSS'
-  }
   return profiler
 }
-
-// Options:
-//   - type: "Application", "Library", "Server"
-//   - name: Name of the project
-//   - framework: Name of the framework
-//   - language: Language of the project
-//   - css: CSS framework
-//   - port: Port to run the project on
 
 export const buildProject = async (project: Project) => {
   const { language, name, framework, typeweb, type, } = project
@@ -107,36 +89,9 @@ export const buildProject = async (project: Project) => {
           name
         )
 
-        if (profiler.CSS_EXTENSION === 'scss') {
-          fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
-          await ncp(
-              path.join(__dirname, '../templates/application-extras/tailwind'),
-              name
-          )
-
-          const packageJSON = JSON.parse(
-              fs.readFileSync(path.join(name, 'package.json'), 'utf8')
-          )
-          packageJSON.devDependencies.tailwindcss = '^3.2.4'
-          fs.writeFileSync(
-              path.join(name, 'package.json'),
-              JSON.stringify(packageJSON, null, 2)
-          )
-        }
-      }
-      break
-    case 'Application':
-      {
-        await ncp(
-          path.join(__dirname, `../templates/${tempDir}/${typeweb}/${framework}/base`),
-          name
-        )
-        await ncp(
-          path.join(__dirname, `../templates/${tempDir}/${typeweb}/${framework}/${lang}`),
-          name
-        )
-
-        if (profiler.CSS2 === 'Tailwind') {
+        if (profiler.CSS === 'Tailwind') {
+          profiler.CONTAINER = 'mt-10 text-3xl mx-auto max-w-6xl'
+          profiler.CSS_EXTENSION = 'scss'
           fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
           await ncp(
               path.join(__dirname, '../templates/application-extras/tailwind'),
@@ -154,7 +109,9 @@ export const buildProject = async (project: Project) => {
         }
 
 
-        if (profiler.CSS2 === 'Bootsrap') {
+        if (profiler.CSS === 'Bootsrap') {
+          profiler.CONTAINER = 'container'
+          profiler.CSS_EXTENSION = 'scss'
           fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
           await ncp(
               path.join(__dirname, '../templates/application-extras/bootstrap'),
@@ -171,8 +128,26 @@ export const buildProject = async (project: Project) => {
           )
         }
 
+        if (profiler.CSS === 'CSS') {
+          profiler.CONTAINER = 'container'
+          profiler.CSS_EXTENSION = 'css'
+        }
+      }
+      break
+    case 'Application':
+      {
+        await ncp(
+          path.join(__dirname, `../templates/${tempDir}/${typeweb}/${framework}/base`),
+          name
+        )
+        await ncp(
+          path.join(__dirname, `../templates/${tempDir}/${typeweb}/${framework}/${lang}`),
+          name
+        )
 
-        if (profiler.CSS2 === 'CSS') {
+        if (profiler.CSS === 'Tailwind') {
+          profiler.CONTAINER = 'mt-10 text-3xl mx-auto max-w-6xl'
+          profiler.CSS_EXTENSION = 'scss'
           fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
           await ncp(
               path.join(__dirname, '../templates/application-extras/tailwind'),
@@ -187,6 +162,30 @@ export const buildProject = async (project: Project) => {
               path.join(name, 'package.json'),
               JSON.stringify(packageJSON, null, 2)
           )
+        }
+
+        if (profiler.CSS === 'Bootsrap') {
+          profiler.CONTAINER = 'container'
+          profiler.CSS_EXTENSION = 'scss'
+          fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
+          await ncp(
+              path.join(__dirname, '../templates/application-extras/bootstrap'),
+              name
+          )
+
+          const packageJSON = JSON.parse(
+              fs.readFileSync(path.join(name, 'package.json'), 'utf8')
+          )
+          packageJSON.devDependencies.bootstrap = '^5.2.3'
+          fs.writeFileSync(
+              path.join(name, 'package.json'),
+              JSON.stringify(packageJSON, null, 2)
+          )
+        }
+
+        if (profiler.CSS === 'CSS') {
+          profiler.CONTAINER = 'container'
+          profiler.CSS_EXTENSION = 'css'
         }
 
       }
