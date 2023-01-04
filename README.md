@@ -23,8 +23,8 @@ npx create-il-app
 ```
 1. Module Federation Webpack 5 (MFW)
     1. SPA
-        1. React 18 (js)
-        2. VUE 3 (js)
+        1. React 18 (js/ts)
+        2. VUE 3 (js/ts)
         3. Angular (ts)
     2. SRR
         1. Next 13 (js)
@@ -41,17 +41,17 @@ npx create-il-app
 
 1. SCSS architecture
 2. Tailwind
+3. Bootstrap
 
 ### Under development
 
 1. Single-Spa
-2. Ui component (bootsrap... etc)
-3. Storybook storybook-webpack-federation-plugin"
-4. Single-Spa typescript + framework (vue3... etc)
-5. SSR example
-6. Test
-7. Angular
-8. Vite tools build
+2. Storybook storybook-webpack-federation-plugin"
+3. Single-Spa typescript + framework (vue3... etc)
+4. SSR example
+5. Test
+5. Angular
+7. Vite tools build
 
 ### Сomponent example
 
