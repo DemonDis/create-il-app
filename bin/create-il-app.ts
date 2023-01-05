@@ -133,7 +133,7 @@ import { Project } from '../src/types'
 
     ])
 
-    const lang = appAnswersType.framework === 'angular' ? ['typescript'] : ['typescript', 'javascript'];
+    const lang = (appAnswersTools.toolsbuild === 'Vite' && appAnswersType.framework === 'react' || appAnswersType.framework === 'angular') ? ['typescript'] : ['typescript', 'javascript'];
     const appAnswersList = await inquirer.prompt<Project>([
       {
         type: 'list',

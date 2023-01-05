@@ -33,8 +33,8 @@ npx create-il-app
         1. Next 13 (js)
 2. Vite
     1. SPA
-        1. React 18 (js/ts)
-        2. VUE 3 (js/ts)
+        1. React 18 (ts)
+        2. VUE 3 (js)
     1. SRR
         1. Nuxt 3 (js)
 3. Single-Spa + MFW
