@@ -72,14 +72,8 @@ import { Project } from '../src/types'
         name: 'framework',
         choices: templates,
         default: 'react',
-      },
-      {
-        type: 'list',
-        message: 'CSS:',
-        name: 'css',
-        choices: ['CSS', 'Tailwind', 'Bootsrap'],
-        default: 'CSS',
-      },
+      }
+      
     ])
 
     buildProject({
@@ -89,11 +83,11 @@ import { Project } from '../src/types'
   }
 
   if (answers.type === 'Application') {
-    const templates = fs
+    const tools = fs
       .readdirSync(path.join(__dirname, `../templates/application`))
       .sort()
 
-    const appAnswers = await inquirer.prompt<Project>([
+    const appAnswersTools = await inquirer.prompt<Project>([
       {
         type: 'input',
         message: 'Port number:',
@@ -102,16 +96,30 @@ import { Project } from '../src/types'
       },
       {
         type: 'list',
+        message: 'Tools build:',
+        name: 'toolsbuild',
+        choices: tools,
+        default: 'Webpack5',
+      },
+ 
+    ])
+
+    const templates = fs
+    .readdirSync(path.join(__dirname, `../templates/application/${appAnswersTools.toolsbuild}`))
+      .sort()
+
+    const appAnswersTemplate = await inquirer.prompt<Project>([
+      {
+        type: 'list',
         message: 'Type:',
         name: 'typeweb',
         choices: templates,
         default: 'SPA',
       },
- 
-    ])
 
+    ])
     const typeweb = fs
-      .readdirSync(path.join(__dirname, `../templates/application/${appAnswers.typeweb}`))
+      .readdirSync(path.join(__dirname, `../templates/application//${appAnswersTools.toolsbuild}/${appAnswersTemplate.typeweb}`))
       .sort()
 
     const appAnswersType = await inquirer.prompt<Project>([
@@ -146,7 +154,8 @@ import { Project } from '../src/types'
 
     buildProject({
       ...answers,
-      ...appAnswers,
+      ...appAnswersTools,
+      ...appAnswersTemplate,
       ...appAnswersType,
       ...appAnswersList
     })

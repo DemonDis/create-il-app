@@ -3,6 +3,8 @@
 [![npm version](https://badge.fury.io/js/create-il-app.svg)](https://badge.fury.io/js/create-il-app) [![npm version](https://img.shields.io/npm/dm/create-il-app.svg)](https://badge.fury.io/js/create-il-app)
 [![size][size]][size-url]
 
+<div align="center"><img src="./images/InnoLab.png" height="150" alt="TimePad Logo"></div>
+
 ## Usage
 
 ```
@@ -14,6 +16,7 @@ npx create-il-app
 ({
   type: 'Application',
   typeweb: 'SPA',
+  toolsbuild: 'Webpack5'
   name: 'host',
   port: '9001',
   framework: 'react',
@@ -43,25 +46,12 @@ npx create-il-app
 2. Tailwind
 3. Bootstrap
 
-### Under development
-
-1. Single-Spa
-2. Storybook storybook-webpack-federation-plugin"
-3. Single-Spa typescript + framework (vue3... etc)
-4. SSR example
-5. Test
-5. Angular
-7. Vite tools build
-
 ### Сomponent example
 
 - Example VUE btn => REACT
 - Example REACT btn => VUE
 - Single-Spa + Module Federation (host/remote)
 
-### 🐛
-
-1. typescript version
 
 
 [size]: https://packagephobia.now.sh/badge?p=create-il-app

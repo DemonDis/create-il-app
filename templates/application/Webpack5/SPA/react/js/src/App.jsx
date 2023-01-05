@@ -1,11 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { hot } from 'react-hot-loader/root';
 
 import "./styles/index.{{CSS_EXTENSION}}";
 
 const App = () => (
   <div className="{{CONTAINER}}">
     <div>Name: {{ NAME }}</div>
+    <div>Tools build: {{ TOOLSBUILD }}</div>
     <div>Type: {{ TYPEWEB }}</div>
     <div>Framework: {{ FRAMEWORK }}</div>
     <div>Language: {{ LANGUAGE }}</div>
@@ -13,4 +14,4 @@ const App = () => (
   </div>
 );
 
-ReactDOM.render(<App />, document.getElementById("app"));
+export default hot(App);

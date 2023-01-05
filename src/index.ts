@@ -37,6 +37,7 @@ const renameStoryBook = (projectName: string) => {
 
 const buildProfiler = ({
   type,
+  toolsbuild,
   typeweb,
   framework,
   language,
@@ -46,6 +47,7 @@ const buildProfiler = ({
 }: Project) => {
   const profiler: Profiler = {
     NAME: name,
+    TOOLSBUILD: toolsbuild,
     TYPEWEB: typeweb === 'SPA' ? 'SPA' : 'SSR',
     FRAMEWORK: framework,
     CSS: css,
@@ -60,7 +62,7 @@ const buildProfiler = ({
 }
 
 export const buildProject = async (project: Project) => {
-  const { language, name, framework, typeweb, type, } = project
+  const { language, name, framework, typeweb, type, toolsbuild } = project
   const lang = language === 'typescript' ? 'ts' : 'js'
   const tempDir = type.toLowerCase()
   const profiler = buildProfiler(project)
@@ -89,59 +91,16 @@ export const buildProject = async (project: Project) => {
           name
         )
 
-        if (profiler.CSS === 'Tailwind') {
-          profiler.CONTAINER = 'mt-10 text-3xl mx-auto max-w-6xl'
-          profiler.CSS_EXTENSION = 'scss'
-          fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
-          await ncp(
-              path.join(__dirname, '../templates/application-extras/tailwind'),
-              name
-          )
-
-          const packageJSON = JSON.parse(
-              fs.readFileSync(path.join(name, 'package.json'), 'utf8')
-          )
-          packageJSON.devDependencies.tailwindcss = '^2.0.2'
-          fs.writeFileSync(
-              path.join(name, 'package.json'),
-              JSON.stringify(packageJSON, null, 2)
-          )
-        }
-
-
-        if (profiler.CSS === 'Bootsrap') {
-          profiler.CONTAINER = 'container'
-          profiler.CSS_EXTENSION = 'scss'
-          fs.unlinkSync(path.normalize(`${name}/src/styles/index.css`))
-          await ncp(
-              path.join(__dirname, '../templates/application-extras/bootstrap'),
-              name
-          )
-
-          const packageJSON = JSON.parse(
-              fs.readFileSync(path.join(name, 'package.json'), 'utf8')
-          )
-          packageJSON.devDependencies.bootstrap = '^5.2.3'
-          fs.writeFileSync(
-              path.join(name, 'package.json'),
-              JSON.stringify(packageJSON, null, 2)
-          )
-        }
-
-        if (profiler.CSS === 'CSS') {
-          profiler.CONTAINER = 'container'
-          profiler.CSS_EXTENSION = 'css'
-        }
       }
       break
     case 'Application':
       {
         await ncp(
-          path.join(__dirname, `../templates/${tempDir}/${typeweb}/${framework}/base`),
+          path.join(__dirname, `../templates/${tempDir}/${toolsbuild}/${typeweb}/${framework}/base`),
           name
         )
         await ncp(
-          path.join(__dirname, `../templates/${tempDir}/${typeweb}/${framework}/${lang}`),
+          path.join(__dirname, `../templates/${tempDir}/${toolsbuild}/${typeweb}/${framework}/${lang}`),
           name
         )
 

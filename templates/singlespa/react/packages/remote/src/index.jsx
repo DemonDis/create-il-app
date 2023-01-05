@@ -4,7 +4,7 @@ import singleSpaReact from 'single-spa-react';
 
 const Remote = () => {
   return (
-    <div className="{{CONTAINER}}">
+    <div>
     <div>REMOTE</div>
     <div>CSS: {{ CSS }}</div>
   </div>
