@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/create-il-app.svg)](https://badge.fury.io/js/create-il-app) [![npm version](https://img.shields.io/npm/dm/create-il-app.svg)](https://badge.fury.io/js/create-il-app)
 [![size][size]][size-url]
 
-<div align="center"><img src="./images/InnoLab.png" height="150" alt="TimePad Logo"></div>
+<div align="center"><img src="https://github.com/DemonDis/create-il-app/blob/main/images/InnoLab.png" height="150" alt="Innovation lab"></div>
 
 ## Usage
 
@@ -16,7 +16,7 @@ npx create-il-app
 ({
   type: 'Application',
   typeweb: 'SPA',
-  toolsbuild: 'Webpack5'
+  toolsbuild: 'Webpack5',
   name: 'host',
   port: '9001',
   framework: 'react',
@@ -32,6 +32,9 @@ npx create-il-app
     2. SRR
         1. Next 13 (js)
 2. Vite
+    1. SPA
+        1. React 18 (js/ts)
+        2. VUE 3 (js/ts)
     1. SRR
         1. Nuxt 3 (js)
 3. Single-Spa + MFW
