@@ -32,5 +32,7 @@ module.exports = withStorybookModuleFederation({
   framework: '@storybook/react',
   core: {
     builder: 'webpack5',
+    disableTelemetry: true, // 👈 Disables telemetry
+    enableCrashReports: false, // 👈 Disables the crash reports to the telemetry events
   },
 })
