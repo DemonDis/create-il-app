@@ -40,7 +40,7 @@ npx create-il-app
 3. Single-Spa + MFW
     1. React 18 (js)
 4. StoryBook (storybook-module-federation)
-    1. React 18 (js)
+    1. React 18 (js/ts)
 5. Packages (wsrun)
 
 ### Styles
@@ -54,8 +54,6 @@ npx create-il-app
 - Example VUE btn => REACT
 - Example REACT btn => VUE
 - Single-Spa + Module Federation (host/remote)
-
-
 
 [size]: https://packagephobia.now.sh/badge?p=create-il-app
 [size-url]: https://packagephobia.now.sh/result?p=create-il-app
