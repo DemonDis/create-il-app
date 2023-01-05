@@ -2,7 +2,7 @@
   "name": "{{NAME}}",
   "version": "1.0.0",
   "scripts": {
-    "start": "vite --port 4173",
+    "start": "vite --port {{PORT}} --open",
 		"build": "tsc && vite build"
   },
   "license": "MIT",
