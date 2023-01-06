@@ -19,5 +19,5 @@ export type Project = {
   language?: 'javascript' | 'typescript'
   port?: number
   name: string
-  type: 'Application' | 'SingleSpa' | 'StoryBook' | 'Packages' 
+  type: 'Application' | 'SingleSpa' | 'StoryBook' | 'Packages' | 'Flutter'
 }

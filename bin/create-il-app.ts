@@ -17,13 +17,28 @@ import { Project } from '../src/types'
       type: 'list',
       message: 'Project Type:',
       name: 'type',
-      choices: ['Application', 'StoryBook', 'Packages', 'SingleSpa'],
+      choices: ['Application', 'StoryBook', 'Packages', 'SingleSpa', 'Flutter'],
       default: 'Application',
     },
   ])
 
   if (answers.type === 'Packages') {
     buildProject(answers)
+  }
+
+  if (answers.type === 'Flutter') {
+    const serverAnswers = await inquirer.prompt<Project>([
+      {
+        type: 'input',
+        message: 'Port number:',
+        name: 'port',
+        default: '9001',
+      },
+    ])
+    buildProject({
+      ...answers,
+      ...serverAnswers,
+    })
   }
 
   if (answers.type === 'StoryBook') {
@@ -37,21 +52,21 @@ import { Project } from '../src/types'
         message: 'Port number:',
         name: 'port',
         default: '6006',
-    },
-    {
-        type: 'list',
-        message: 'Framework:',
-        name: 'framework',
-        choices: templates,
-        default: 'react',
-    },
-    {
-        type: 'list',
-        message: 'Language:',
-        name: 'language',
-        choices: ['typescript', 'javascript'],
-        default: 'javascript',
-    },
+      },
+      {
+          type: 'list',
+          message: 'Framework:',
+          name: 'framework',
+          choices: templates,
+          default: 'react',
+      },
+      {
+          type: 'list',
+          message: 'Language:',
+          name: 'language',
+          choices: ['typescript', 'javascript'],
+          default: 'javascript',
+      },
     ])
 
     buildProject({
