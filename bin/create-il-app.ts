@@ -4,6 +4,9 @@ import shell from 'shelljs'
 import fs from 'fs'
 import path from 'path'
 import * as banners from '../utils/banners'
+
+import { red, green, bold } from 'kolorist'
+
 import { buildProject } from '../src/index'
 import { Project } from '../src/types'
 ;(async function () {
@@ -188,12 +191,13 @@ import { Project } from '../src/types'
     })
   }
 
-  shell.echo(`Your '${answers.name}' project. 🔥 READY 🔥.
+  console.log()
+  shell.echo(`👉 Your ${bold(green(`${answers.name}`))} project. 🔥 ${bold(green(`READY`))} 🔥.
 
 Next steps:
 
-▶️ cd ${answers.name}
-▶️ yarn
-▶️ yarn start
+▶️ ${bold(green(`cd ${answers.name}`))}
+▶️ ${bold(green(`yarn`))}
+▶️ ${bold(green(`yarn start`))}
 `)
 })()
