@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.45",
+  "version": "1.0.46",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -9,6 +9,10 @@
     "build": "tsc",
     "lint": "eslint . --ext .js --fix",
     "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DemonDis/create-il-app.git"
   },
   "keywords": [
     "micro-frontend",
@@ -28,6 +32,7 @@
     "ncp": "^2.0.0",
     "shelljs": "^0.8.4"
   },
+  "homepage": "https://github.com/DemonDis/create-il-app#readme",
   "devDependencies": {
     "@types/glob": "^7.2.0",
     "@types/inquirer": "^8.1.3",

@@ -56,7 +56,9 @@ module.exports = (env, arg) => ({
         name: '{{SAFE_NAME}}',
         filename: 'remoteEntry.js',
         remotes: {},
-        exposes: {},
+        exposes: {
+          './Flutter': './build/web/main.dart.js',
+        },
         shared: {},
       }),
       new HtmlWebPackPlugin({

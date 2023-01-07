@@ -3,9 +3,17 @@ import inquirer from 'inquirer'
 import shell from 'shelljs'
 import fs from 'fs'
 import path from 'path'
+import * as banners from '../utils/banners'
 import { buildProject } from '../src/index'
 import { Project } from '../src/types'
 ;(async function () {
+  console.log()
+  console.log(
+    process.stdout.isTTY && process.stdout.getColorDepth() > 8
+      ? banners.gradientBanner
+      : banners.defaultBanner
+  )
+  console.log()
   const answers = await inquirer.prompt<Project>([
     {
       type: 'input',
