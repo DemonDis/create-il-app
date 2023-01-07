@@ -53,8 +53,8 @@ import { Project } from '../src/types'
     const templates = fs
       .readdirSync(path.join(__dirname, '../templates/storybook'))
       .sort()
-
-    const serverAnswers = await inquirer.prompt<Project>([
+   
+    const storyAnswers = await inquirer.prompt<Project>([
       {
         type: 'input',
         message: 'Port number:',
@@ -68,18 +68,22 @@ import { Project } from '../src/types'
           choices: templates,
           default: 'react',
       },
+    ])
+
+    const lang = storyAnswers.framework === 'vue3' ? ['javascript'] : ['typescript', 'javascript'];
+    const storyAnswersLang = await inquirer.prompt<Project>([
       {
           type: 'list',
           message: 'Language:',
           name: 'language',
-          choices: ['typescript', 'javascript'],
+          choices: lang,
           default: 'javascript',
       },
     ])
-
     buildProject({
       ...answers,
-      ...serverAnswers,
+      ...storyAnswers,
+      ...storyAnswersLang,
     })
   }
 
