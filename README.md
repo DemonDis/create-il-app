@@ -41,6 +41,7 @@ npx create-il-app
     1. React 18 (js)
 4. StoryBook (storybook-module-federation)
     1. React 18 (js/ts)
+    2. Vue 3 (js)
 5. Packages (wsrun)
 6. Futter build (Webpack)
 
