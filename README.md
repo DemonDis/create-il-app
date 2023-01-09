@@ -24,6 +24,15 @@ npx create-il-app
   css: 'css',
 })
 ```
+
+## 💃 Motivation
+
+A quick recap about the concept of `Micro Frontends`:
+
+> Techniques, strategies and recipes for building a **modern web app** with **multiple teams** using **different JavaScript frameworks**. — [Micro Frontends](https://micro-frontends.org/)
+
+## 📦 Structura
+
 1. Module Federation Webpack 5 (MFW)
     1. SPA
         1. React 18 (js/ts)
@@ -56,6 +65,7 @@ npx create-il-app
 - Example VUE btn => REACT
 - Example REACT btn => VUE
 - Single-Spa + Module Federation (host/remote)
+
 
 [size]: https://packagephobia.now.sh/badge?p=create-il-app
 [size-url]: https://packagephobia.now.sh/result?p=create-il-app

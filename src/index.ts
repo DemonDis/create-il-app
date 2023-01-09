@@ -52,7 +52,7 @@ const buildProfiler = ({
     FRAMEWORK: framework,
     CSS: css,
     SAFE_NAME: name.replace(/-/g, '_').trim(),
-    LANGUAGE: language === 'typescript' ? 'TypeScript' : 'JavaScript',
+    LANGUAGE: language === 'typescript' || framework === 'angular' ? 'TypeScript' : 'JavaScript',
   }
 
   if (type === 'StoryBook' || type === 'Application' || type === 'Flutter' ) {
@@ -101,14 +101,21 @@ export const buildProject = async (project: Project) => {
       break
     case 'Application':
       {
-        await ncp(
-          path.join(__dirname, `../templates/${tempDir}/${toolsbuild}/${typeweb}/${framework}/base`),
-          name
-        )
-        await ncp(
-          path.join(__dirname, `../templates/${tempDir}/${toolsbuild}/${typeweb}/${framework}/${lang}`),
-          name
-        )
+        if(framework === 'angular' || (toolsbuild === 'Vite' && framework === 'react')) {
+          await ncp(
+            path.join(__dirname, `../templates/${tempDir}/${toolsbuild}/${typeweb}/${framework}`),
+            project.name
+          )
+        } else {
+          await ncp(
+            path.join(__dirname, `../templates/${tempDir}/${toolsbuild}/${typeweb}/${framework}/base`),
+            name
+          )
+          await ncp(
+            path.join(__dirname, `../templates/${tempDir}/${toolsbuild}/${typeweb}/${framework}/${lang}`),
+            name
+          )
+        }
 
         if (profiler.CSS === 'Tailwind') {
           profiler.CONTAINER = 'mt-10 text-3xl mx-auto max-w-6xl'

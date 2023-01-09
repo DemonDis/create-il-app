@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.50",
+  "version": "1.0.51",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -16,6 +16,9 @@
   },
   "keywords": [
     "micro-frontend",
+    "micro frontend",
+    "microfrontend",
+    "microfront",
     "webpack5",
     "module-federation",
     "single-spa",

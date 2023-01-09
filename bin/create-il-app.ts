@@ -163,15 +163,8 @@ import { Project } from '../src/types'
 
     ])
 
-    const lang = (appAnswersTools.toolsbuild === 'Vite' && appAnswersType.framework === 'react' || appAnswersType.framework === 'angular') ? ['typescript'] : ['typescript', 'javascript'];
-    const appAnswersList = await inquirer.prompt<Project>([
-      {
-        type: 'list',
-        message: 'Language:',
-        name: 'language',
-        choices: lang,
-        default: 'javascript',
-      },
+    const appAnswersList = await inquirer.prompt<Project>(
+    appAnswersType.framework === 'angular' || (appAnswersTools.toolsbuild === 'Vite' && appAnswersType.framework === 'react')  ? [
       {
         type: 'list',
         message: 'CSS:',
@@ -179,7 +172,21 @@ import { Project } from '../src/types'
         choices: ['CSS', 'Tailwind', 'Bootsrap'],
         default: 'CSS',
       },
-
+    ]:[
+      {
+        type: 'list',
+        message: 'Language:',
+        name: 'language',
+        choices: ['typescript', 'javascript'],
+        default: 'javascript',
+      },
+      {
+      type: 'list',
+      message: 'CSS:',
+      name: 'css',
+      choices: ['CSS', 'Tailwind', 'Bootsrap'],
+      default: 'CSS',
+      }
     ])
 
     buildProject({
