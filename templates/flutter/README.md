@@ -2,7 +2,17 @@
 
 ## Build Setup
 
-1. Add build folder flutter (build/web/).
+1. Flutter project
+```
+flutter create . --platforms=web
+```
+    1. https://docs.flutter.dev/get-started/web
+    2. https://docs.flutter.dev/development/platform-integration/web/renderers
+```
+ flutter run -d chrome --web-renderer html --profile
+```
+
+2. Start webpack build
 
 ```bash
 yarn
