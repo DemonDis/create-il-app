@@ -66,6 +66,9 @@ A quick recap about the concept of `Micro Frontends`:
 - Example REACT btn => VUE
 - Single-Spa + Module Federation (host/remote)
 
+### ✨ Features
+
+- ⚡ **remix js**
 
 [size]: https://packagephobia.now.sh/badge?p=create-il-app
 [size-url]: https://packagephobia.now.sh/result?p=create-il-app
