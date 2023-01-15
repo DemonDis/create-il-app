@@ -73,6 +73,9 @@ export const buildProject = async (project: Project) => {
         path.join(__dirname, `../templates/${tempDir}`),
         project.name
       )
+      fs.mkdir(`${project.name}/packages`, { recursive: true }, err => {
+          if(err) throw err;
+       });
       break
     case 'Flutter':
       await ncp(
