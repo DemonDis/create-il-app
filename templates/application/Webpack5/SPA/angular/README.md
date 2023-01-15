@@ -3,9 +3,14 @@
 ## Build Setup
 
 ```bash
+# install dependencies
 yarn
-# or
-yarn start
+
+# serve with hot reload at localhost:{{PORT}}
+$ yarn start
+
+# build for production
+$ yarn build
 ```
 
 ```js

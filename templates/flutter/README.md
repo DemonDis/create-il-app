@@ -15,9 +15,11 @@ flutter create . --platforms=web
 2. Start webpack build
 
 ```bash
+# install dependencies
 yarn
-# or
-yarn start
+
+# serve with hot reload at localhost:{{PORT}}
+$ yarn start
 ```
 
 ```js

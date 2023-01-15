@@ -1,6 +1,6 @@
 {
   "name": "create-il-app",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "description": "Create IL project",
   "main": "src/index.js",
   "bin": "bin/create-il-app.js",
@@ -28,6 +28,7 @@
     "vue3",
     "next",
     "nuxt",
+    "remix",
     "tailwind",
     "bootstrap",
     "scss",
