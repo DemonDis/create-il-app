@@ -1,8 +1,21 @@
 # {{SAFE_NAME}}
 
+## Build Setup
+
+```bash
+# install dependencies
+$ yarn
+
+# serve with hot reload at localhost:{{PORT}}
+$ yarn start
+
+# build for production and launch server
+$ yarn build
+```
+
 ```js
 ({
-  type: 'Packages',
+  type: 'Single-Spa',
   typeweb: '{{TYPEWEB}}',
   toolsbuild: '{{TOOLSBUILD}}',
   name: '{{SAFE_NAME}}',

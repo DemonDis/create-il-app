@@ -38,6 +38,7 @@ A quick recap about the concept of `Micro Frontends`:
         1. React 18 (js/ts)
         2. VUE 3 (js/ts)
         3. Angular (ts)
+        4. Svelte (js/ts)
     2. SRR
         1. Next 13 (js)
 2. Vite
