@@ -1,20 +1,21 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+// const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
 
 const deps = require("./package.json").dependencies;
 
+const mode = process.env.NODE_ENV || 'development';
+const prod = mode === 'production';
+
 module.exports = (env, arg) => ({
-  module: arg.mode === 'production' ? 'production' : 'development',
-  devtool: arg.mode === 'production' ? 'source-map' : 'eval',
-
+	entry: {
+		'build/bundle': ['./src/index.js']
+	},
   output: {
-    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:{{PORT}}/' : '/{{SAFE_NAME}}/',
-  },
-
-  resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    path: path.join(__dirname, '/public'),
+		filename: '[name].js',
+		chunkFilename: '[name].[id].js'
   },
 
   resolve: {
@@ -25,45 +26,38 @@ module.exports = (env, arg) => ({
     mainFields: ["svelte", "browser", "module", "main"],
   },
 
-  devServer: {
-    port: {{PORT}},
-    historyApiFallback: true,
-    headers: {'Access-Control-Allow-Origin': '*'}
-  },
-
   module: {
     rules: [
+			{
+				test: /\.svelte$/,
+				use: {
+					loader: 'svelte-loader',
+					options: {
+						compilerOptions: {
+							dev: !prod
+						},
+						emitCss: prod,
+						hotReload: !prod
+					}
+				}
+			},
       {
-        test: /\.svelte$/,
-        use: {
-          loader: "svelte-loader",
-          options: {
-            emitCss: true,
-            hotReload: true,
-          },
-        },
-      },
-      {
-        test: /\.(m?js|ts)/,
-        type: "javascript/auto",
-        resolve: {
-          fullySpecified: false,
-        },
-      },
-      {
-        test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
-      },
-      {
-        test: /\.(ts|tsx|js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },
+				test: /\.css$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					'css-loader'
+				]
+			},
+			{
+				// required to prevent errors from Svelte on Webpack 5+
+				test: /node_modules\/svelte\/.*\.mjs$/,
+				resolve: {
+					fullySpecified: false
+				}
+			}
     ],
   },
-
+  mode,
   plugins: [
     new ModuleFederationPlugin({
       name: "{{SAFE_NAME}}",
@@ -89,8 +83,13 @@ module.exports = (env, arg) => ({
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-    }),
+    // new HtmlWebPackPlugin({
+    //   template: "./public/index.html",
+    // }),
   ],
+  devtool: prod ? false : 'source-map',
+  devServer: {
+    port: {{PORT}},
+    hot: true
+  },
 });
