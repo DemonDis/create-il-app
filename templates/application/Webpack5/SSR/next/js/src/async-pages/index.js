@@ -4,7 +4,7 @@
 // });
 export default function Home() {
   return (
-    <div class="{{CONTAINER}}">
+    <div className="{{CONTAINER}}">
       <div>Name: {{ NAME }}</div>
       <div>Type: {{ TYPEWEB }}</div>
       <div>Framework: {{ FRAMEWORK }}</div>

@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run open-browser && next dev -p {{PORT}}",
+    "start": "npm run open-browser && next dev -p {{PORT}}",
     "open-browser": "open http://localhost:{{PORT}}",
     "build": "next build",
-    "start": "next start -p {{PORT}}",
     "lint": "next lint"
   },
   "dependencies": {
