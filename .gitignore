@@ -3,4 +3,6 @@ bin/create-il-app.js
 src/index.js
 src/types.js
 
+// Lock
 yarn.lock
+package-lock.json
