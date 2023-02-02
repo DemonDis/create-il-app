@@ -38,6 +38,7 @@ const renameStoryBook = (projectName: string) => {
 const buildProfiler = ({
   type,
   toolsbuild,
+  protocol,
   typeweb,
   framework,
   language,
@@ -48,6 +49,7 @@ const buildProfiler = ({
   const profiler: Profiler = {
     NAME: name,
     TOOLSBUILD: toolsbuild,
+    PROTOCOL: protocol,
     TYPEWEB: typeweb === 'SPA' ? 'SPA' : 'SSR',
     FRAMEWORK: framework,
     CSS: css,
