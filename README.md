@@ -39,13 +39,13 @@ A quick recap about the concept of `Micro Frontends`:
         2. VUE 3 (js/ts)
         3. Angular (ts)
         4. Svelte (js/ts)
-    2. SRR
+    2. SSR
         1. Next 13 (js)
 2. Vite
     1. SPA
         1. React 18 (ts)
         2. VUE 3 (js)
-    1. SRR
+    1. SSR
         1. Nuxt 3 (js)
 3. Single-Spa + MFW
     1. React 18 (js)
