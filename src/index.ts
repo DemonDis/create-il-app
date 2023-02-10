@@ -39,6 +39,7 @@ const buildProfiler = ({
   type,
   toolsbuild,
   protocol,
+  os,
   typeweb,
   framework,
   language,
@@ -50,6 +51,7 @@ const buildProfiler = ({
     NAME: name,
     TOOLSBUILD: toolsbuild,
     PROTOCOL: protocol,
+    OS: os === 'Linux' ? 'Linux' : 'Windows',
     TYPEWEB: typeweb === 'SPA' ? 'SPA' : 'SSR',
     FRAMEWORK: framework,
     CSS: css,
@@ -119,6 +121,28 @@ export const buildProject = async (project: Project) => {
           await ncp(
             path.join(__dirname, `../templates/${tempDir}/${toolsbuild}/${typeweb}/${framework}/${lang}`),
             name
+          )
+        }
+
+        if (profiler.OS === 'Linux') {
+          const packageJSON = JSON.parse(
+              fs.readFileSync(path.join(name, 'package.json'), 'utf8')
+          )
+          packageJSON.scripts.clean = 'rm -r node_modules/'
+          fs.writeFileSync(
+              path.join(name, 'package.json'),
+              JSON.stringify(packageJSON, null, 2)
+          )
+        }
+
+        if (profiler.OS === 'Windows') {
+          const packageJSON = JSON.parse(
+              fs.readFileSync(path.join(name, 'package.json'), 'utf8')
+          )
+          packageJSON.scripts.clean = 'rimraf node_modules'
+          fs.writeFileSync(
+              path.join(name, 'package.json'),
+              JSON.stringify(packageJSON, null, 2)
           )
         }
 

@@ -31,6 +31,13 @@ import { Project } from '../src/types'
       choices: ['Application', 'StoryBook', 'Packages', 'SingleSpa', 'Flutter'],
       default: 'Application',
     },
+    {
+      type: 'list',
+      message: 'Operating system',
+      name: 'os',
+      choices: ['Linux', 'Windows'],
+      default: 'Linux',
+    },
   ])
 
   if (answers.type === 'Packages') {
@@ -160,7 +167,6 @@ import { Project } from '../src/types'
         choices: typeweb,
         default: 'react',
       },
-
     ])
 
     const appAnswersList = await inquirer.prompt<Project>(
