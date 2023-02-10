@@ -16,6 +16,7 @@ npx create-il-app
 ({
   type: 'Application',
   typeweb: 'SPA',
+  os: 'Linux',
   toolsbuild: 'Webpack5',
   protocol: 'REST',
   name: 'host',

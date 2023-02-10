@@ -33,7 +33,7 @@ import { Project } from '../src/types'
     },
     {
       type: 'list',
-      message: 'Operating system',
+      message: 'Operating system:',
       name: 'os',
       choices: ['Linux', 'Windows'],
       default: 'Linux',
