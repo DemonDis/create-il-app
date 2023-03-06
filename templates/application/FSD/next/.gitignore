@@ -1,9 +1,0 @@
-// Node
-node_modules
-
-// Build
-dist
-
-// Lock
-yarn.lock
-package-lock.json
