@@ -68,6 +68,7 @@ A quick recap about the concept of `Micro Frontends`:
 ### ✨ Features
 
 - ⚡ **Remix js (react)**
+- ⚡ **ASTRO js**
 - ⚡ **Protocol (WebSocket/REST)**
 - ⚡ **FSD**
 
