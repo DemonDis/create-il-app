@@ -15,7 +15,6 @@ npx create-il-app
 ```js
 ({
   type: 'Application',
-  typeweb: 'SPA',
   os: 'Linux',
   toolsbuild: 'Webpack5',
   protocol: 'REST',
@@ -51,10 +50,7 @@ A quick recap about the concept of `Micro Frontends`:
     1. React 18 (js/ts)
     2. Vue 3 (js)
 5. Packages (wsrun)
-6. Protocol
-    1. WebSocket
-    2. REST
-7. Futter build (Webpack) - experimental
+6. Futter build (Webpack) - experimental
 
 ### Styles
 
@@ -71,7 +67,7 @@ A quick recap about the concept of `Micro Frontends`:
 ### ✨ Features
 
 - ⚡ **Remix js (react)**
-- ⚡ **Protocol**
+- ⚡ **Protocol (WebSocket/REST)**
 - ⚡ **FSD**
 
 [size]: https://packagephobia.now.sh/badge?p=create-il-app
