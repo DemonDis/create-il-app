@@ -2,7 +2,6 @@ export type Profiler = {
   NAME: string
   OS?: 'Linux' | 'Windows'
   FRAMEWORK: string | undefined
-  TYPEWEB: 'SPA' | 'SSR'
   TOOLSBUILD: string | undefined
   PROTOCOL?: 'REST' | 'WebSocket'
   SAFE_NAME: string
@@ -17,7 +16,6 @@ export type Project = {
   os?: 'Linux' | 'Windows'
   framework?: string
   css?: 'CSS' | 'Tailwind' | 'Bootsrap'
-  typeweb?:  'SPA' | 'SSR'
   toolsbuild?: string
   protocol?: 'REST' | 'WebSocket'
   language?: 'javascript' | 'typescript'

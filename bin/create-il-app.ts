@@ -155,52 +155,11 @@ import { Project } from '../src/types'
       },
 
     ])
-    const typeweb = fs
-      .readdirSync(path.join(__dirname, `../templates/application//${appAnswersTools.toolsbuild}/${appAnswersTemplate.typeweb}`))
-      .sort()
-
-    const appAnswersType = await inquirer.prompt<Project>([
-      {
-        type: 'list',
-        message: 'Framework:',
-        name: 'framework',
-        choices: typeweb,
-        default: 'react',
-      },
-    ])
-
-    const appAnswersList = await inquirer.prompt<Project>(
-    appAnswersType.framework === 'angular' || (appAnswersTools.toolsbuild === 'Vite' && appAnswersType.framework === 'react')  ? [
-      {
-        type: 'list',
-        message: 'CSS:',
-        name: 'css',
-        choices: ['CSS', 'Tailwind', 'Bootsrap'],
-        default: 'CSS',
-      },
-    ]:[
-      {
-        type: 'list',
-        message: 'Language:',
-        name: 'language',
-        choices: ['typescript', 'javascript'],
-        default: 'javascript',
-      },
-      {
-      type: 'list',
-      message: 'CSS:',
-      name: 'css',
-      choices: ['CSS', 'Tailwind', 'Bootsrap'],
-      default: 'CSS',
-      }
-    ])
 
     buildProject({
       ...answers,
       ...appAnswersTools,
-      ...appAnswersTemplate,
-      ...appAnswersType,
-      ...appAnswersList
+      ...appAnswersTemplate
     })
   }
 

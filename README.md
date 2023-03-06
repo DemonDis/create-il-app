@@ -70,7 +70,7 @@ A quick recap about the concept of `Micro Frontends`:
 - ⚡ **Remix js (react)**
 - ⚡ **ASTRO js**
 - ⚡ **Protocol (WebSocket/REST)**
-- ⚡ **FSD**
+- ⚡ **FSD (react)**
 
 [size]: https://packagephobia.now.sh/badge?p=create-il-app
 [size-url]: https://packagephobia.now.sh/result?p=create-il-app
