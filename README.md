@@ -46,6 +46,7 @@ A quick recap about the concept of `Micro Frontends`:
     3. Nuxt 3 (js)
 3. Single-Spa + MFW
     1. React 18 (js)
+    2. VUE 3 (js) 🔨
 4. StoryBook (storybook-module-federation)
     1. React 18 (js/ts)
     2. Vue 3 (js)
