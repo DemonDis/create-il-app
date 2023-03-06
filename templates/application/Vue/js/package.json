@@ -1,0 +1,24 @@
+{
+  "name": "{{NAME}}",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite --port {{PORT}} --open",
+		"build": "tsc && vite build"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Dmitry Shibikin",
+    "email": "dd@other-vision.com"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^3.0.0",
+    "@originjs/vite-plugin-federation": "^1.1.10",
+    "vite": "^4.0.3"
+  }
+}

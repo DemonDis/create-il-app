@@ -10,22 +10,12 @@
 ```
 npx create-il-app
 ```
-
-## Micro-Frontends
-```js
-({
-  type: 'Application',
-  name: 'host',
-  port: '9001',
-  framework: 'react'
-})
-```
-
 ## 💃 Motivation
 
 A quick recap about the concept of `Micro Frontends`:
 
 > Techniques, strategies and recipes for building a **modern web app** with **multiple teams** using **different JavaScript frameworks**. — [Micro Frontends](https://micro-frontends.org/)
+
 
 ## 📦 Structura
 ```
@@ -34,6 +24,15 @@ A quick recap about the concept of `Micro Frontends`:
     |    ├── Webpack   #
     |    └── Vite      # 
     └── ...
+```
+## Micro-Frontends
+```js
+({
+  type: 'Application',
+  name: 'host',
+  port: '9001',
+  framework: 'react'
+})
 ```
 
 [size]: https://packagephobia.now.sh/badge?p=create-il-app

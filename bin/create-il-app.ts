@@ -35,7 +35,7 @@ import { Project } from '../src/types'
       type: 'list',
       message: 'Framework:',
       name: 'framework',
-      choices: ['React'],
+      choices: ['React', 'Vue'],
       default: 'react',
     },
   ])
