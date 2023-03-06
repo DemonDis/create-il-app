@@ -5,7 +5,7 @@
 
 <div align="center"><img src="https://github.com/DemonDis/create-il-app/blob/main/images/InnoLab.png" height="150" alt="Innovation lab"></div>
 
-## Usage
+## Getting started 🚀
 
 ```
 npx create-il-app
@@ -20,9 +20,9 @@ A quick recap about the concept of `Micro Frontends`:
 ## 📦 Structura
 ```
 └── create-il-app/
-    ├── React 18 /     # 
-    |    ├── Webpack   #
-    |    └── Vite      # 
+    ├── React 18/      #
+    |    ├── Webpack   # ModuleFederationPlugin
+    |    └── Vite      # @module-federation/vite
     └── ...
 ```
 ## Micro-Frontends
@@ -31,7 +31,7 @@ A quick recap about the concept of `Micro Frontends`:
   type: 'Application',
   name: 'host',
   port: '9001',
-  framework: 'react'
+  framework: 'React'
 })
 ```
 
