@@ -15,9 +15,7 @@ npx create-il-app
 ```js
 ({
   type: 'Application',
-  os: 'Linux',
   toolsbuild: 'Webpack5',
-  protocol: 'REST',
   name: 'host',
   port: '9001',
   framework: 'react',
@@ -34,24 +32,11 @@ A quick recap about the concept of `Micro Frontends`:
 
 ## 📦 Structura
 
-1. Module Federation Webpack 5 (MFW)
-    1. React 18 (js/ts)
-    2. VUE 3 (js/ts)
-    3. Angular (ts)
-    4. Svelte (js/ts)
-    5. Next 13 (js)
-2. Vite
-    1. React 18 (ts)
-    2. VUE 3 (js)
-    3. Nuxt 3 (js)
-3. Single-Spa + MFW
-    1. React 18 (js)
-    2. VUE 3 (js) 🔨
-4. StoryBook (storybook-module-federation)
-    1. React 18 (js/ts)
-    2. Vue 3 (js)
-5. Packages (wsrun)
-6. Futter build (Webpack) - experimental
+└── create-il-app/
+    ├── React 18 /     # 
+    |    ├── Webpack   #
+    |    └── Vite      # 
+    └── ...
 
 ### Styles
 
