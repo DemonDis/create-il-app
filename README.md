@@ -21,15 +21,15 @@ A quick recap about the concept of `Micro Frontends`:
 ```
 └── create-il-app/
     ├── React/                # React 18
-    |    ├── lang             # 
-    |    |    ├── js          # 
-    |    |    └── ts          # 
-    |    ├── protocol         # 
-    |    |    ├── rest        # 
-    |    |    └── websocket   # 
-    |    ├── tools            # 
-    |    |    ├── vite        # @module-federation/vite
-    |    |    └── webcoket    # ModuleFederationPlugin
+    |    ├── lang             ## 
+    |    |    ├── js          ### 
+    |    |    └── ts          ### 
+    |    ├── protocol         ## 
+    |    |    ├── rest        ### 
+    |    |    └── websocket   ### 
+    |    └── tools            ## 
+    |         ├── vite        ### @module-federation/vite
+    |         └── webcoket    ### ModuleFederationPlugin
     ├── Vue/                  # Vue 3
     |    └── ...              # 
     └── ...
@@ -46,6 +46,8 @@ A quick recap about the concept of `Micro Frontends`:
   protocol: 'rest'
 })
 ```
+### ✨ Project board
+- ⚡ **[Board create-il-app](https://github.com/users/DemonDis/projects/2/views/1)**
 
 [size]: https://packagephobia.now.sh/badge?p=create-il-app
 [size-url]: https://packagephobia.now.sh/result?p=create-il-app
