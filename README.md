@@ -41,7 +41,7 @@ A quick recap about the concept of `Micro Frontends`:
   name: 'host',
   port: '9001',
   framework: 'React',
-  langues: 'js',
+  language: 'js',
   tools: 'websocket',
   protocol: 'rest'
 })
