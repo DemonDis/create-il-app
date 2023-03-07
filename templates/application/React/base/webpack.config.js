@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const deps = require('./package.json').dependencies;
 
 module.exports = (env, arg) => ({
-  module: arg.mode === 'production' ? 'production' : 'development',
+  mode: arg.mode === 'production' ? 'production' : 'development',
   entry: '/src/index.js',
   devtool: arg.mode === 'production' ? 'source-map' : 'eval',
 
