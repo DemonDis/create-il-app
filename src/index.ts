@@ -49,7 +49,7 @@ const buildProfiler = ({
     LANGUAGE: language === 'typescript' || framework === 'angular' ? 'TypeScript' : 'JavaScript',
   }
 
-  if (type === 'StoryBook' || type === 'Application' || type === 'Flutter' ) {
+  if (type === 'Application') {
     profiler.PORT = port
   }
   return profiler
@@ -65,11 +65,11 @@ export const buildProject = async (project: Project) => {
     case 'Application':
       {
           await ncp(
-            path.join(__dirname, `../templates/${tempDir}/${framework}/base`),
+            path.join(__dirname, `../templates/${tempDir}/${framework}/lang/base`),
             name
           )
           await ncp(
-            path.join(__dirname, `../templates/${tempDir}/${framework}/${lang}`),
+            path.join(__dirname, `../templates/${tempDir}/${framework}/lang/${lang}`),
             name
           )
       }

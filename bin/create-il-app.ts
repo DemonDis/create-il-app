@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import inquirer from 'inquirer'
 import shell from 'shelljs'
 import fs from 'fs'

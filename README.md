@@ -20,9 +20,18 @@ A quick recap about the concept of `Micro Frontends`:
 ## 📦 Structura
 ```
 └── create-il-app/
-    ├── React 18/      #
-    |    ├── Webpack   # ModuleFederationPlugin
-    |    └── Vite      # @module-federation/vite
+    ├── React/                # React 18
+    |    ├── lang             # 
+    |    |    ├── js          # 
+    |    |    └── ts          # 
+    |    ├── protocol         # 
+    |    |    ├── rest        # 
+    |    |    └── websocket   # 
+    |    ├── tools            # 
+    |    |    ├── vite        # @module-federation/vite
+    |    |    └── webcoket    # ModuleFederationPlugin
+    ├── Vue/                  # Vue 3
+    |    └── ...              # 
     └── ...
 ```
 ## Micro-Frontends
@@ -31,7 +40,10 @@ A quick recap about the concept of `Micro Frontends`:
   type: 'Application',
   name: 'host',
   port: '9001',
-  framework: 'React'
+  framework: 'React',
+  langues: 'js',
+  tools: 'websocket',
+  protocol: 'rest'
 })
 ```
 
