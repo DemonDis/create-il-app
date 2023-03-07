@@ -5,6 +5,7 @@ const deps = require('./package.json').dependencies;
 
 module.exports = (env, arg) => ({
   module: arg.mode === 'production' ? 'production' : 'development',
+  entry: '/src/index.js',
   devtool: arg.mode === 'production' ? 'source-map' : 'eval',
 
   output: {
@@ -13,9 +14,9 @@ module.exports = (env, arg) => ({
 
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
+    // alias: {
+    //   'react-dom': '@hot-loader/react-dom'
+    // }
   },
 
   devServer: {

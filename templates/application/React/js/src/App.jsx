@@ -1,17 +1,17 @@
 import React from "react";
 import { hot } from 'react-hot-loader/root';
+// 
+// import "./styles/index.{{CSS_EXTENSION}}";
 
-import "./styles/index.{{CSS_EXTENSION}}";
-
-const App = () => (
-  <div className="{{CONTAINER}}">
-    <div>Name: {{ NAME }}</div>
-    <div>Tools build: {{ TOOLSBUILD }}</div>
-    <div>Type: {{ TYPEWEB }}</div>
-    <div>Framework: {{ FRAMEWORK }}</div>
-    <div>Language: {{ LANGUAGE }}</div>
-    <div>CSS: {{ CSS }}</div>
-  </div>
-);
+function App() {
+  return (
+    <div className="{{CONTAINER}}">
+      <div>Name: {{ NAME }}</div>
+      <div>Framework: {{ FRAMEWORK }}</div>
+      <div>Language: {{ LANGUAGE }}</div>
+    </div>
+  )
+};
 
 export default hot(App);
+// export default App;
